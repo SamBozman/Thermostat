@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("myTag", "Settings button in Home screen was clicked!");
             Intent intent = new Intent(this,Settings.class);
             startActivity(intent);
+            Log.d("myTag", "We are in Settings Java code!");
 
         }
         //other buttons for this Activity go here
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("myTag", "Home button in Settings screen was clicked!");
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
+            Log.d("myTag", "We are in MainActivity Java code!");
 
         }
     }
