@@ -5,14 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class Settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.activity_settings);
+        Log.d("myTag", "We are in Settings Java code!");
     }
 
     // android:onClick="buttonHandler" in XML design file
@@ -33,5 +33,4 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
 }
