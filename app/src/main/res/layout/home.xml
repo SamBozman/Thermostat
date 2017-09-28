@@ -7,78 +7,37 @@
     android:background="@android:color/background_dark"
     tools:context="com.example.android.thermostat.MainActivity"
     tools:layout_editor_absoluteY="25dp"
-    tools:layout_editor_absoluteX="0dp">
+    app:layout_constraintLeft_toRightOf="@+id/view3"
+    android:layout_marginLeft="0dp">
 
     <TextView
         android:id="@+id/humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:background="@drawable/humidity"
-        android:paddingBottom="10dp"
-        android:paddingLeft="12dp"
-        android:paddingRight="8dp"
-        android:paddingTop="10dp"
-        android:text="45\%"
+        android:padding="10dp"
+        android:text="45%"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="@android:color/holo_blue_light"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/humidityText" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintTop_toBottomOf="@+id/humidityHeader"
+        app:layout_constraintRight_toRightOf="@+id/humidityHeader"
+        app:layout_constraintLeft_toLeftOf="@+id/humidityHeader"
+        app:layout_constraintHorizontal_bias="0.0" /> //Humidity
 
     <TextView
         android:id="@+id/roomTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="0dp"
         android:background="@drawable/roomtemp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="12dp"
-        android:paddingRight="8dp"
-        android:paddingTop="10dp"
+        android:padding="10dp"
         android:text="71\u00B0"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@android:color/holo_red_dark"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roomTempText" />
-
-    <TextView
-        android:id="@+id/humidityText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:padding="5dp"
-        android:text="@string/humidity"
-        android:textColor="@android:color/background_light"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/roomTemp"
-        android:layout_marginLeft="25dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.02" />
-
-    <TextView
-        android:id="@+id/roomTempText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:padding="5dp"
-        android:text="@string/room_temp"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintLeft_toLeftOf="@+id/temp_header"
+        app:layout_constraintTop_toBottomOf="@+id/temp_header"
+        app:layout_constraintRight_toRightOf="@+id/temp_header" />// Room Temp
 
     <Button
         android:id="@+id/button_h1"
@@ -86,15 +45,72 @@
         android:layout_height="wrap_content"
         android:text="@string/settings"
         android:onClick="buttonHandler"
-        android:layout_marginRight="485dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="7dp"
         android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />//Settings Button
+
+    <TextView
+        android:id="@+id/temp_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:text="Room Temp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/humidity"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintTop_toTopOf="parent" />//Temp header
+
+    <TextView
+        android:id="@+id/humidityHeader"
+        android:layout_width="81dp"
+        android:layout_height="38dp"
+        android:padding="10dp"
+        android:text="Humidity"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintLeft_toRightOf="@+id/temp_header"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+
+
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_begin="150dp"
+        android:orientation="horizontal" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline2"
+        app:layout_constraintGuide_begin="250dp"
+        android:orientation="horizontal" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline3"
+        app:layout_constraintGuide_begin="248dp"
+        android:orientation="vertical" />
+
+    <EditText
+        android:id="@+id/datetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="@+id/roomTemp"
+        app:layout_constraintTop_toBottomOf="@+id/roomTemp" />
+
 
 </android.support.constraint.ConstraintLayout>

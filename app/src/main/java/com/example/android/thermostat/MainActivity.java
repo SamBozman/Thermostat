@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +16,42 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+        Thread myThread = null;
+
+        Runnable myRunnableThread = new CountDownRunner();
+        myThread= new Thread(myRunnableThread);
+        myThread.start();
+    }
+
+    public void doWork() {
+        runOnUiThread(new Runnable() {
+            public void run() {
+                try{
+                    TextView txtCurrentTime= (TextView)findViewById(R.id.datetext);
+                    Date dt = new Date();
+                    int hours = dt.getHours();
+                    int minutes = dt.getMinutes();
+                    int seconds = dt.getSeconds();
+                    String curTime = hours + ":" + minutes + ":" + seconds;
+                    txtCurrentTime.setText(curTime);
+                }catch (Exception e) {}
+            }
+        });
+    }
+
+    class CountDownRunner implements Runnable{
+        // @Override
+        public void run() {
+            while(!Thread.currentThread().isInterrupted()){
+                try {
+                    doWork();
+                    Thread.sleep(1000); // Pause of 1 Second
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }catch(Exception e){
+                }
+            }
+        }
     }
 
     // android:onClick="buttonHandler" in XML design file
