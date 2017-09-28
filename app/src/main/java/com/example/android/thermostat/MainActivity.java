@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,13 +30,11 @@ public class MainActivity extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             public void run() {
                 try{
-                    TextView txtCurrentTime= (TextView)findViewById(R.id.datetext);
-                    Date dt = new Date();
-                    int hours = dt.getHours();
-                    int minutes = dt.getMinutes();
-                    int seconds = dt.getSeconds();
-                    String curTime = hours + ":" + minutes + ":" + seconds;
-                    txtCurrentTime.setText(curTime);
+                    TextView txtCurrentTime= (TextView)findViewById(R.id.dateText);
+                    Calendar calendar = Calendar.getInstance();
+                    String calendarStr = calendar.getTime().toString();
+                    txtCurrentTime.setText(calendarStr);
+
                 }catch (Exception e) {}
             }
         });
