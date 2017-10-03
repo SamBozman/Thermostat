@@ -28,6 +28,16 @@ public class MainActivity extends AppCompatActivity {
         Runnable myRunnableThread = new CountDownRunner();
         myThread= new Thread(myRunnableThread);
         myThread.start();
+        weatherFont = Typeface.createFromAsset(getApplicationContext().getAssets(), "fonts/weathericons-regular-webfont.ttf");
+
+        cityField = (TextView)findViewById(R.id.city_field);
+        updatedField = (TextView)findViewById(R.id.updated_field);
+        detailsField = (TextView)findViewById(R.id.details_field);
+        currentTemperatureField = (TextView)findViewById(R.id.current_temperature_field);
+        humidity_field = (TextView)findViewById(R.id.humidity_field);
+        pressure_field = (TextView)findViewById(R.id.pressure_field);
+        weatherIcon = (TextView)findViewById(R.id.weather_icon);
+        weatherIcon.setTypeface(weatherFont);
     }
 
     public void doWork() {
