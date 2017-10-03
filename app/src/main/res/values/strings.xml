@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Thermostat</string>
-    <string name="room_temp">Room Temp</string>
     <string name="settings">Settings</string>
-    <string name="humidity">Humidity</string>
+    <string name="go_home">Go Home</string>
+    <string name="pressure">pressure</string>
+    <string name="humidity">humidity</string>
+    <string name="description">description</string>
+    <string name="temp">temp</string>
+    <string name="icon">icon</string>
+    <string name="date">date</string>
+    <string name="city">city</string>
 </resources>
