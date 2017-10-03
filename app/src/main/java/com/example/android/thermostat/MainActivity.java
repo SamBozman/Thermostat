@@ -7,7 +7,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
                 try{
                     TextView txtCurrentTime= (TextView)findViewById(R.id.dateText);
                     Calendar calendar = Calendar.getInstance();
-                    String calendarStr = calendar.getTime().toString();
+                    DateFormat df = new SimpleDateFormat("EEE, MMM d yyyy HH:mm:ss");
+                    Date d = calendar.getTime();
+                    String calendarStr = df.format(calendar.getTime());
                     txtCurrentTime.setText(calendarStr);
-
                 }catch (Exception e) {}
             }
         });
