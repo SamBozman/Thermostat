@@ -1,6 +1,7 @@
 package com.example.android.thermostat;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,13 +14,17 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
+//TODO Have MainActivity run automatically if app crashes or stops for any reason
+
+    TextView cityField, detailsField, currentTemperatureField, humidity_field, pressure_field, weatherIcon, updatedField;
+    Typeface weatherFont;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_layout);
-        Thread myThread = null;
 
+        Thread myThread = null;
         Runnable myRunnableThread = new CountDownRunner();
         myThread= new Thread(myRunnableThread);
         myThread.start();

@@ -10,6 +10,20 @@
     app:layout_constraintLeft_toRightOf="@+id/view3"
     android:layout_marginLeft="0dp">
 
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline2"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
     <TextView
         android:id="@+id/room_humidity"
         android:layout_width="wrap_content"
@@ -79,41 +93,74 @@
         android:layout_marginTop="16dp" />
 
 
-
-    <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/guideline"
-        app:layout_constraintGuide_begin="150dp"
-        android:orientation="horizontal" />
-
-    <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/guideline2"
-        app:layout_constraintGuide_begin="250dp"
-        android:orientation="horizontal" />
-
-    <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/guideline3"
-        app:layout_constraintGuide_begin="314dp"
-        android:orientation="vertical" />
-
     <TextView
         android:id="@+id/dateText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginTop="20dp"
         android:text="Wed Sep 27"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roomTemp"
+        app:layout_constraintRight_toLeftOf="@+id/guideline"
+        android:layout_marginRight="8dp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#000000"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roomTemp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/city_field"
+            style="@style/text_medium"
+            android:text="@string/city" />
+
+        <TextView
+            android:id="@+id/updated_field"
+            style="@style/text_small"
+            android:text="@string/date" />
+
+        <TextView
+            android:id="@+id/weather_icon"
+            style="@style/icon1"
+            android:text="@string/icon" />
+
+        <TextView
+            android:id="@+id/current_temperature_field"
+            style="@style/text_medium"
+            android:text="@string/temp" />
+
+
+        <TextView
+            android:id="@+id/details_field"
+            style="@style/text_small"
+            android:text="@string/description" />
+
+        <TextView
+            android:id="@+id/humidity_field"
+            style="@style/text_small"
+            android:text="@string/humidity" />
+
+        <TextView
+            android:id="@+id/pressure_field"
+            style="@style/text_small"
+            android:text="@string/pressure" />
+
+
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>
