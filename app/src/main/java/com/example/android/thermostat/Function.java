@@ -1,8 +1,6 @@
 package com.example.android.thermostat;
 
-/**
- * Created by SHAJIB on 7/4/2017.
- */
+
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -21,13 +19,13 @@ import java.util.Locale;
 
 public class Function {
 
-    // Project Created by Ferdousur Rahman Shajib
-    // www.androstock.com
+
 
     private static final String OPEN_WEATHER_MAP_URL =
             "http://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&units=metric";
-
-    private static final String OPEN_WEATHER_MAP_API = "e93a6334217e80de9cc9fb274e335a23";
+//sonofbc openweather key = 61387b6ed7a1b9ee8e4f4656cfb39a18
+// clan.estine openweather api key = e93a6334217e80de9cc9fb274e335a23
+    private static final String OPEN_WEATHER_MAP_API = "61387b6ed7a1b9ee8e4f4656cfb39a18";
 
     public static String setWeatherIcon(int actualId, long sunrise, long sunset){
         int id = actualId / 100;
@@ -84,7 +82,7 @@ public class Function {
             try {
                 jsonWeather = getWeatherJSON(params[0], params[1]);
             } catch (Exception e) {
-                Log.d("Error", "Cannot process JSON results", e);
+                Log.d("boz", "Cannot process JSON results", e);
             }
 
 
@@ -114,7 +112,7 @@ public class Function {
 
                 }
             } catch (JSONException e) {
-                //Log.e(LOG_TAG, "Cannot process JSON results", e);
+                Log.d("boz", "Cannot process JSON results", e);
             }
 
 
@@ -154,6 +152,7 @@ public class Function {
 
             return data;
         }catch(Exception e){
+            Log.d("boz", "JSON results were not returned", e);
             return null;
         }
     }
