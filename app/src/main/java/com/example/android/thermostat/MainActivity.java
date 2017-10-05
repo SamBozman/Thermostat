@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -97,22 +98,22 @@ public class MainActivity extends AppCompatActivity {
 
     // android:onClick="buttonHandler" in XML design file
     public void buttonHandler(View v) {
-
+        //File myDir = getFilesDir();
         int i = v.getId();
         if (i == R.id.button_h1) {
             Log.d("myTag", "Settings button in Home screen was clicked!");
             Intent intent = new Intent(this,Settings.class);
             startActivity(intent);
             Log.d("myTag", "We are in Settings Java code!");
-
-        }
+            //RW_Object.writeConfig(myDir);
+    }
         //other buttonshape for this Activity go here
         else if (i == R.id.button_s1) {
             Log.d("myTag", "Home button in Settings screen was clicked!");
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
             Log.d("myTag", "We are in MainActivity Java code!");
-
+            //RW_Object.readConfig(myDir);
         }
     }
 
