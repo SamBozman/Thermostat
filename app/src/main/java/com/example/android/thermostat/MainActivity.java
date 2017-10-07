@@ -1,5 +1,5 @@
 package com.example.android.thermostat;
-
+//TestGit
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
