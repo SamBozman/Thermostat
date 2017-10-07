@@ -9,12 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import java.io.File;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 public class MainActivity extends AppCompatActivity {
 //TODO Have MainActivity run automatically if app crashes or stops for any reason
 
@@ -65,25 +59,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // android:onClick="buttonHandler" in XML design file
-    public void buttonHandler(View v) {
+    public  void buttonHandler(View v) {
         //File myDir = getFilesDir();
         int i = v.getId();
-        if (i == R.id.button_h1) {
-            Log.d("myTag", "Settings button in Home screen was clicked!");
-            Intent intent = new Intent(this,Settings.class);
+        if (i == R.id.but_home1) {
+            Log.d("myTag", "SettingsActivity button in Home screen was clicked!");
+            Intent intent = new Intent(this,SettingsActivity.class);
             startActivity(intent);
-            Log.d("myTag", "We are in Settings Java code!");
+            Log.d("myTag", "We are in Settings screen");
             //RW_Object.writeConfig(myDir);
-    }
-        //other buttonshape for this Activity go here
-        else if (i == R.id.button_s1) {
-            Log.d("myTag", "Home button in Settings screen was clicked!");
+        }
+
+        else if (i == R.id.but_set1) {
+            Log.d("myTag", "Home button in SettingsActivity screen was clicked!");
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
-            Log.d("myTag", "We are in MainActivity Java code!");
+            Log.d("myTag", "We are in the Home screen");
             //RW_Object.readConfig(myDir);
         }
+
+        else if (i == R.id.but_sched1) {
+            Log.d("myTag", "Home button in SchedulesActivity screen was clicked!");
+            Intent intent = new Intent(this,ScheduleActivity.class);
+            startActivity(intent);
+            Log.d("myTag", "We are in Home screen!");
+            //RW_Object.readConfig(myDir);
+        }
+
+        else if (i == R.id.but_set3) {
+            Log.d("myTag", "Schedules button in SettingsActivity screen was clicked!");
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
+            Log.d("myTag", "We are in Schedules screen");
+            //RW_Object.readConfig(myDir);
+        }
+
     }
 
 }

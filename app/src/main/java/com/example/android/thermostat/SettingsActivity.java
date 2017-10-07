@@ -3,7 +3,7 @@ package com.example.android.thermostat;
 import android.os.Bundle;
 
 
-public class Settings extends MainActivity {
+public class SettingsActivity extends MainActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

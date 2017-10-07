@@ -9,8 +9,9 @@
     <string name="date">date</string>
     <string name="city">city</string>
     <string name="settings_header">Settings</string>
-    <string name="go_home">Go Home</string>
+    <string name="go_home">Home</string>
     <string name="date_time">Date/Time</string>
     <string name="s_temperature">Temperature</string>
     <string name="s_schedules">Schedules</string>
+    <string name="back"><![CDATA[<- Back]]></string>
 </resources>
