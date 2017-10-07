@@ -55,14 +55,15 @@
         app:layout_constraintTop_toBottomOf="@+id/temp_header" />// Room Temp
 
     <Button
-        android:id="@+id/but_home1"
+        android:id="@+id/but_home_set"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
         android:onClick="buttonHandler"
         android:text="@string/settings"
-        android:textColor="#000000"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />//Settings Button
     <TextView

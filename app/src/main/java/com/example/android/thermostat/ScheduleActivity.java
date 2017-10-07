@@ -7,6 +7,6 @@ public class ScheduleActivity extends MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.schedule_layoutj);
+        setContentView(R.layout.schedule_layout);
     }
 }

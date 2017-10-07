@@ -62,33 +62,33 @@ public class MainActivity extends AppCompatActivity {
     public  void buttonHandler(View v) {
         //File myDir = getFilesDir();
         int i = v.getId();
-        if (i == R.id.but_home1) {
+        if (i == R.id.but_home_set) {
             Log.d("myTag", "SettingsActivity button in Home screen was clicked!");
-            Intent intent = new Intent(this,SettingsActivity.class);
+            Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
             startActivity(intent);
             Log.d("myTag", "We are in Settings screen");
             //RW_Object.writeConfig(myDir);
         }
 
-        else if (i == R.id.but_set1) {
+        else if (i == R.id.but_set_home) {
             Log.d("myTag", "Home button in SettingsActivity screen was clicked!");
-            Intent intent = new Intent(this,MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
             Log.d("myTag", "We are in the Home screen");
             //RW_Object.readConfig(myDir);
         }
 
-        else if (i == R.id.but_sched1) {
+        else if (i == R.id.but_sched_home) {
             Log.d("myTag", "Home button in SchedulesActivity screen was clicked!");
-            Intent intent = new Intent(this,ScheduleActivity.class);
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
             Log.d("myTag", "We are in Home screen!");
             //RW_Object.readConfig(myDir);
         }
 
-        else if (i == R.id.but_set3) {
+        else if (i == R.id.but_set_sched) {
             Log.d("myTag", "Schedules button in SettingsActivity screen was clicked!");
-            Intent intent = new Intent(this,MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(),ScheduleActivity.class);
             startActivity(intent);
             Log.d("myTag", "We are in Schedules screen");
             //RW_Object.readConfig(myDir);
