@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         //TODO Have asyncTask run at least once a day.
 
 
-
+        //Thread used to update time and date
         Thread myThread = null;
         Runnable myRunnableThread = new CountDownRunner();
         myThread= new Thread(myRunnableThread);
@@ -64,37 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-    class CountDownRunner implements Runnable{
-        // @Override
-        public void run() {
-            while(!Thread.currentThread().isInterrupted()){
-                try {
-                    doWork();
-                    Thread.sleep(1000); // Pause of 1 Second
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }catch(Exception e){
-                }
-            }
-        }
-    }
-
-    public void doWork() {
-        runOnUiThread(new Runnable() {
-            public void run() {
-                try{
-                    TextView txtCurrentTime= (TextView)findViewById(R.id.dateText);
-                    Calendar calendar = Calendar.getInstance();
-                    DateFormat df = new SimpleDateFormat("EEE, MMM d yyyy HH:mm:ss");
-                    Date d = calendar.getTime();
-                    String calendarStr = df.format(calendar.getTime());
-                    txtCurrentTime.setText(calendarStr);
-                }catch (Exception e) {}
-            }
-        });
-    }
 
     // android:onClick="buttonHandler" in XML design file
     public void buttonHandler(View v) {
